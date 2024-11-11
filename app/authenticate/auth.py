@@ -8,12 +8,13 @@ from sqlmodel import Session, select
 from database.db import get_session
 from models.business import User
 from schemas.business import TokenData
+import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
 
-SECRET_KEY = "your-secret-key"  # Değiştirilmeli
+SECRET_KEY = os.environ.get("SECRET_KEY") # Değiştirilmeli
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
