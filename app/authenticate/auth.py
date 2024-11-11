@@ -8,6 +8,10 @@ from sqlmodel import Session, select
 from database.db import get_session
 from models.business import User
 from schemas.business import TokenData
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 SECRET_KEY = "your-secret-key"  # Değiştirilmeli
 ALGORITHM = "HS256"
